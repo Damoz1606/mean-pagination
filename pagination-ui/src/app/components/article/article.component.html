@@ -1,0 +1,26 @@
+<div *ngIf="!article; else item">
+    <h4>Loading...</h4>
+</div>
+
+<ng-template #item>
+    <div class="container mt-4">
+        <div class="card mb-2">
+            <div class="card-header">
+                <h3>{{article.title}}</h3>
+            </div>
+            <img [src]="article.imageURL" alt="">
+            <div class="card-body">
+                <div class="container">
+                    <p>{{article.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-4 d-flex justify-content-center">
+            <div class="btn-group">
+                <button class="btn btn-secondary" (click)="goBack()">Back</button>
+                <button class="btn btn-danger" (click)="deleteArticle(article._id)"><span
+                        class="fa fa-trash"></span></button>
+            </div>
+        </div>
+    </div>
+</ng-template>

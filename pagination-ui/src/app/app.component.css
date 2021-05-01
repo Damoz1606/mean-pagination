@@ -1,0 +1,12 @@
+.card {
+  max-width: 250px;
+}
+
+.card-header {
+  position: relative;
+}
+
+.delete-item {
+  position: absolute;
+  right: 0;
+}

@@ -1,0 +1,14 @@
+<div class="m-2 d-flex justify-content-center">
+    <button *ngIf="page > 1" type="button" class="btn btn-sm btn-outline-secondary" (click)="setPage(1)"><span
+            class="fa fa-chevron-left"></span><span class="fa fa-chevron-left"></span></button>
+    <button *ngIf="page > 1" type="button" class="btn btn-sm btn-outline-secondary" (click)="setPage(page - 1)"><span
+            class="fa fa-chevron-left"></span></button>
+    <button type="button" *ngFor="let number of pages.slice(page - 1, (page - 1) + 4)"
+        [class]="(number === page)?'btn btn-sm btn-outline-secondary active':'btn btn-sm btn-outline-secondary'"
+        (click)="setPage(number)">{{number}}</button>
+    <button *ngIf="page < pages.length" type="button" class="btn btn-sm btn-outline-secondary"
+        (click)="setPage(page + 1)"><span class="fa fa-chevron-right"></span></button>
+    <button *ngIf="page < pages.length" type="button" class="btn btn-sm btn-outline-secondary"
+        (click)="setPage(pages.length)"><span class="fa fa-chevron-right"></span><span
+            class="fa fa-chevron-right"></span></button>
+</div>
